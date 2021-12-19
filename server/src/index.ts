@@ -8,7 +8,7 @@ import { PubSub } from "graphql-subscriptions";
 import { startPublishingLocationUpdates } from "./carLocationGenerator";
 
 const app = express();
-
+const pubsub = new PubSub();
 
 // Construct a schema, using GraphQL schema language
 const typeDefs = gql`
@@ -42,6 +42,11 @@ const resolvers = {
     hello: () => "Hello world!",
   },
   
+  Subscription: {
+    cars: {
+      subscribe: () => pubsub.asyncIterator(["CARS"]),
+    },
+  },
   // This is where you should add a resolver for the Subscription defined above.
   // See https://www.apollographql.com/docs/apollo-server/data/subscriptions/#resolving-a-subscription
 };
