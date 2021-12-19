@@ -53,7 +53,7 @@ const resolvers = {
 
 
 // This initializes the simulation of car locations. You may need to add arguments to this call.
-startPublishingLocationUpdates();
+startPublishingLocationUpdates(pubsub);
 
 
 // Below is boilerplate to initialize Apollo and the http and subscription servers.
