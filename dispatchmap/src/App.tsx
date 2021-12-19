@@ -45,9 +45,7 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-      <div style={{ height: "100vh", width: "100%" }}>
-        <CarMap />
-      </div>
+      <CarMap />
     </ApolloProvider>
   );
 }
