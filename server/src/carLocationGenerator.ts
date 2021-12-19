@@ -17,7 +17,7 @@ const MAX_CAR_DISTANCE_PER_UPDATE_INTERVAL_METERS =
 function startPublishingLocationUpdates(pubsub:PubSub) {
   const numCars = 10;
 
-  let cars = [
+  let cars: Car[] = [
     ...Array.from({length: numCars}, (_, i) => i + 1).map((i) => ({
         id: i.toString(),
         location: randomPointInManhattan(),
