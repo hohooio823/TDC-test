@@ -16,6 +16,21 @@ const typeDefs = gql`
     hello: String
   }
 
+  type coordinates{
+    latitude: Float!
+    longitude: Float!
+  }
+
+  type car{
+    id: String!
+    location: coordinates!
+    destination: coordinates!
+    distanceToDestination: Float!
+  }
+
+  type Subscription {
+    cars: [car]
+  }
   # This is where you should add types to the schema to describe a car and its location
   # as well as a GraphQL Subscription root.
   # See https://www.apollographql.com/docs/apollo-server/data/subscriptions/#schema-definition
